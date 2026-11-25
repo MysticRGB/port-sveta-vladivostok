@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0c11"><meta name="description" content="Порт Света — проект городского фестиваля медиаискусства во Владивостоке. Маршрут инсталляций, архитектурный мэпинг, шоу на воде и образовательная программа.">
+<link rel="preload" as="font" type="font/woff" href="./media/grafita-special.woff" crossorigin><link rel="icon" href="./media/port-sveta-mark.svg" type="image/svg+xml"><title>Порт Света — Владивосток</title><link rel="stylesheet" href="./vendor/leaflet/leaflet.css"><link rel="stylesheet" href="./style.css"><script src="./vendor/leaflet/leaflet.js" defer></script><script src="./app.js" defer></script>
+<link rel="canonical" href="https://mysticrgb.github.io/port-sveta-vladivostok/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Порт Света">
+<meta property="og:url" content="https://mysticrgb.github.io/port-sveta-vladivostok/">
+<meta property="og:title" content="Порт Света — Владивосток">
+<meta property="og:description" content="Фестиваль медиаискусства. 11–12 сентября 2027. Городские инсталляции, видеомэпинг и шоу на воде.">
+<meta property="og:image" content="https://mysticrgb.github.io/port-sveta-vladivostok/media/telegram-preview.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Порт Света. Владивосток, 11–12 сентября 2027. Фиолетовый квадрат над водой.">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body><a class="skip" href="#main">К программе</a>
+<header class="top wrap"><a href="#home" aria-label="Порт Света, начало" class="brand"><img class="festival-logo" src="./media/port-sveta-logo.svg" alt="Порт Света"></a><nav aria-label="Разделы фестиваля"><a href="#route">Маршрут</a><a href="#contest">Конкурс</a><a href="#school">Образование</a></nav></header>
+<main id="main"><section class="hero" id="home"><div class="hero-art"><img fetchpriority="high" src="./media/square.webp" alt="Эскиз фестиваля. Один фиолетовый квадрат над бухтой"></div><div class="hero-inner wrap"><div class="eyebrow"><span class="dash"></span> Фестиваль медиаискусства</div><h1>ПОРТ<br><span>СВЕТА</span></h1><p class="intro">От фасадов Владивостока до воды. Маршрут по городу, где художники работают со светом, звуком и архитектурой.</p><a class="cta" href="#route">Исследовать маршрут</a></div></section>
+<section class="festival-dates" id="dates" aria-labelledby="festival-date-title">
+  <img class="dates-image" src="./media/festival-dates.webp" alt="" loading="lazy" decoding="async" width="1672" height="941">
+  <div class="dates-inner wrap">
+    <p class="dates-place">Владивосток · Планируемые даты</p>
+    <h2 id="festival-date-title" class="dates-title">
+      <span class="dates-days"><time datetime="2027-09-11">11</time>–<time datetime="2027-09-12">12</time></span>
+      <span class="dates-month">сентября 2027</span>
+    </h2>
+  </div>
+</section>
+<section class="route-section wrap section" id="route"><h2>Карта фестиваля</h2><p class="lead">Выберите точку на карте Владивостока. Городские площадки предложены для обсуждения.</p>
+<div class="atlas"><div class="map-shell"><div id="city-map" role="region" aria-label="Интерактивная карта центра Владивостока"></div><button class="map-reset" type="button">Все точки</button></div>
+<div class="route-card" aria-live="polite"><div class="kicker" id="point-kind"></div><h3 id="point-title"></h3><p id="point-copy"></p><div id="point-status" class="status"></div></div></div>
+<div id="route-list" class="route-list" role="group" aria-label="Площадки на карте"></div>
+</section>
+<section class="water-concept wrap section" id="water"><h2>Экран из воды</h2><p class="lead">С берега видна низкая баржа. Над ней поднимаются три веера воды. По струям проходит световая волна, собирается в силуэт кита и рассыпается в брызгах.</p>
+<div class="water-pair"><figure><a href="./media/bay.webp" aria-label="Открыть панораму водного шоу"><img loading="lazy" src="./media/bay.webp" alt="Эскиз баржи с тремя водными веерами на фоне Золотого моста"></a><figcaption>Бухта Золотой Рог · эскиз</figcaption></figure>
+<figure><a href="./media/whale.webp" aria-label="Открыть вид с набережной"><img loading="lazy" src="./media/whale.webp" alt="Эскиз проекции кита на водяной завесе перед зрителями"></a><figcaption>Вид с набережной · эскиз</figcaption></figure></div><p class="caption">Референс водных экранов — «Парк света» студии MYSTIC.</p></section>
+<section class="section wrap" id="contest"><h2>Конкурс видеомэпинга</h2><div class="contest-grid"><figure><img loading="lazy" src="./media/facade.webp" alt="Концепция проекции в синих и золотых тонах на фасаде Дальрыбвтуза"><figcaption>Эскиз конкурсного показа</figcaption></figure><div class="contest-copy"><h3>Проекция на Дальрыбвтузе</h3><p>Моушн-дизайнеры и студии создают работы под архитектуру Дальрыбвтуза. По плану, 8–10 финалистов покажут на фасаде фильмы длительностью 3–4 минуты.</p><dl><dt>Архитектурный мэпинг</dt><dd>Окна, простенки и карнизы задают композицию фильма.</dd><dt>AI Mapping</dt><dd>Авторы используют искусственный интеллект как художественный инструмент.</dd><dt>Приз зрительских симпатий</dt><dd>Зрители выбирают работу онлайн или по QR-коду на площадке.</dd></dl><details><summary>Как устроен отбор</summary><p>План предусматривает открытый приём заявок, отбор жюри и работу финалистов с технической маской и 3D-моделью фасада. Срок подачи, регламент и призовой фонд уточняются.</p></details></div></div>
+<div class="schedule"><div class="schedule-head"><div><h3>Два вечера конкурса</h3></div><div class="days" role="group" aria-label="Дата показов"><button aria-pressed="true" data-day="0">11 сентября</button><button aria-pressed="false" data-day="1">12 сентября</button></div></div><p class="caption">Предварительный сценарий · местное время Владивостока</p><div id="shows" aria-live="polite"></div></div></section>
+<section class="education" id="school"><div class="wrap section"><h2>Мастерская света</h2><p class="lead">Дневной образовательный кластер для художников, студентов и зрителей.</p><div class="school-grid"><article><span class="class-sign lens" aria-hidden="true"></span><h3>Лекции</h3><p>Разобрать партитуру одного фасадного фильма. Где появляется первый образ, как окна задают ритм и в какой момент вступает звук бухты?</p></article><article><span class="class-sign grille" aria-hidden="true"></span><h3>Мастер-классы</h3><p>Собрать короткую сцену по маске здания и проверить её на макете. В отдельной лаборатории — попробовать AI-инструменты для движущихся фактур.</p></article><article><span class="class-sign rings" aria-hidden="true"></span><h3>Круглые столы</h3><p>Обсудить, как портовый город становится выставочной площадкой. За одним столом — взгляд художника, архитектора, горожанина и куратора.</p></article></div><p class="caption">Темы предварительные. Расписание и состав спикеров уточняются.</p></div></section>
+</main><footer class="wrap"><a class="brand" href="#home">ПОРТ СВЕТА</a><span>Концепция фестиваля · Владивосток, 2027</span><a href="#home">К началу</a></footer>
+</body></html>
+

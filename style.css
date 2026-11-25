@@ -1,0 +1,166 @@
+@font-face { font-family: Grafita; src: url("./media/grafita-normal.woff") format("woff"); font-display: swap; }
+@font-face { font-family: "Grafita Special"; src: url("./media/grafita-special.woff") format("woff"); font-display: swap; }
+:root { --bg:#07070a; --panel:#17151d; --ink:#f4f1f8; --muted:#bab6c5; --accent:#c1a4ff; --line:#383440; --text:Grafita,sans-serif; --display:"Grafita Special",Grafita,sans-serif; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:22px; }
+body { margin:0; background:var(--bg); color:var(--ink); font:1rem/1.55 var(--text); }
+button,summary { cursor:pointer; }
+button { font:inherit; color:inherit; }
+a { color:inherit; text-decoration:none; }
+a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid white; outline-offset:3px; }
+.skip { position:absolute; transform:translateY(-130%); z-index:1000; background:white; color:black; padding:1rem; }
+.skip:focus { transform:none; }
+.wrap { width:min(1392px,92%); margin-inline:auto; }
+.top,footer,.top nav,.schedule-head,.days { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.top { min-height:68px; }
+.top nav { gap:2.3rem; }
+.top nav a:hover,footer a:hover { color:var(--accent); }
+.festival-logo { height:43px; display:block; }
+h1,h2,h3,p,figure,dl { margin:0; }
+h1,h2,h3 { font-weight:400; line-height:1.04; text-wrap:balance; }
+h1,h2 { font-family:var(--display); letter-spacing:-.045em; }
+h1 { font-size:clamp(5rem,10.8vw,11rem); line-height:.96; margin:.26em 0 .24em; }
+h1 span,.kicker { color:var(--accent); }
+h2 { font-size:clamp(2.65rem,5.7vw,5.7rem); }
+h3 { font-size:clamp(1.55rem,2.55vw,2.55rem); letter-spacing:-.028em; }
+.hero { position:relative; isolation:isolate; overflow:hidden; border-block:1px solid var(--line); }
+.hero-art { position:absolute; inset:0; z-index:-1; }
+.hero-art img { width:100%; height:100%; object-fit:cover; object-position:67% 54%; }
+.hero-art:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,#06060bf5,transparent 58%),linear-gradient(0deg,#06060bd9,transparent 23%); }
+.hero-inner { padding-block:clamp(3rem,5.6vw,6.5rem) 3rem; }
+.eyebrow { display:flex; align-items:center; gap:.65rem; color:#e5ddf8; }
+.dash { width:24px; height:2px; background:var(--accent); }
+.intro { font-size:clamp(1rem,1.4vw,1.24rem); color:#e0dfea; max-width:36ch; }
+.cta { display:inline-block; margin-top:1.5rem; padding:.85rem 1.25rem; border-radius:3px; background:var(--accent); color:#18121f; }
+.cta:hover { background:#e1d2ff; }
+
+.festival-dates {
+  display:grid;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  align-items:center;
+  min-height:clamp(27rem,37vw,35rem);
+  background:#100c18;
+  border-bottom:1px solid var(--line);
+}
+.dates-image {
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:69% 52%;
+}
+.festival-dates::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(90deg,#0c0811ea 0%,#100b1ad1 24%,#12091b56 56%,transparent 84%),
+             linear-gradient(0deg,#0b0811c2,transparent 36%);
+}
+.dates-inner { padding-block:3rem 3.4rem; }
+.dates-place { color:#e9defa; margin-bottom:.85rem; }
+.dates-title { display:grid; justify-items:start; gap:.2em; text-wrap:nowrap; }
+.dates-days { color:#f3e8ff; font-size:clamp(6.8rem,15vw,13.25rem); line-height:.87; letter-spacing:-.07em; }
+.dates-month { color:#dfc6ff; font-size:clamp(2rem,5vw,4.55rem); line-height:1; }
+@media(max-width:580px) {
+  .festival-dates { min-height:23rem; align-items:end; }
+  .dates-image { object-position:77% 38%; }
+  .festival-dates::before {
+    background:linear-gradient(0deg,#100a1af5 4%,#160b22b0 50%,transparent 84%),
+               linear-gradient(90deg,#110c1b66,transparent 65%);
+  }
+  .dates-inner { padding-block:5.5rem 1.7rem; }
+  .dates-days { font-size:clamp(5.35rem,23vw,8.35rem); }
+}
+
+.section { padding-block:clamp(3.5rem,6.5vw,7rem); }
+.lead { font-size:clamp(1.05rem,1.52vw,1.36rem); max-width:62ch; color:var(--muted); margin:1.25rem 0 2.15rem; }
+.atlas { display:grid; grid-template-columns:minmax(0,1.8fr) minmax(0,1fr); border:1px solid var(--line); background:var(--panel); }
+.map-shell { position:relative; min-width:0; }
+#city-map { width:100%; height:clamp(375px,33vw,470px); background:#292637; isolation:isolate; font-family:var(--text); }
+.map-reset { position:absolute; top:12px; right:12px; z-index:2; padding:.5rem .85rem; border:1px solid #726781; background:#17131fe8; border-radius:3px; font-size:.94rem; }
+#city-map .leaflet-bar { border:1px solid #786d86; box-shadow:none; }
+#city-map .leaflet-bar a { width:35px; height:35px; line-height:35px; color:var(--ink); background:#17131fe8; border-color:#54465d; font-family:var(--text); font-weight:400; }
+#city-map .leaflet-bar a.leaflet-disabled { color:#9c92a9; }
+#city-map .leaflet-control-attribution { background:#17131fdb; padding:1px 6px; }
+#city-map .leaflet-control-attribution a { color:#eee7f5; font: .76rem var(--text); }
+.place-label { white-space:nowrap; pointer-events:none; color:#c9bdd0; font:.87rem var(--text); text-shadow:0 1px 3px #161220,0 0 6px #17131f; }
+.stop-marker { border:0; background:none; }
+.pin { display:grid; place-items:center; width:40px; height:40px; padding:0; background:#211b2f; border:1.5px solid #d5c2ff; border-radius:50%; color:white; box-shadow:0 2px 6px #0009; font:1rem var(--text); }
+.pin[aria-pressed=true] { color:#21162c; background:#d5baff; border-color:#efe5ff; box-shadow:0 0 0 5px #aa82ec55; }
+.route-card { padding:clamp(1.5rem,3vw,3.1rem); display:flex; align-items:flex-start; flex-direction:column; }
+.kicker { font-size:.95rem; margin-bottom:.75rem; }
+.route-card p,.contest-copy p,.school-grid p { color:var(--muted); margin:1rem 0; }
+.status { color:var(--accent); border-top:1px solid var(--line); margin-top:auto; padding-top:.8rem; font-size:.9rem; }
+.route-list { display:grid; grid-template-columns:repeat(5,1fr); }
+.route-list button,.days button { border:0; background:transparent; }
+.route-list button { text-align:left; color:var(--muted); padding:.85rem .4rem; border-bottom:1px solid var(--line); }
+.route-list button[aria-pressed=true] { color:var(--accent); border-bottom:2px solid var(--accent); }
+.caption,figcaption { font-size:.9rem; margin-top:.8rem; color:var(--muted); }
+.water-concept { border-block:1px solid var(--line); }
+.water-pair,.contest-grid,.school-grid { display:grid; gap:clamp(1.2rem,3vw,3.5rem); }
+.water-pair { grid-template-columns:1.45fr 1fr; align-items:start; }
+figure img { width:100%; display:block; object-fit:cover; }
+.water-pair img { aspect-ratio:16/9; }
+.water-pair figure:nth-child(2) { margin-top:clamp(2rem,5vw,6rem); }
+.water-pair a { display:block; }
+.water-pair a:hover { filter:brightness(1.07); }
+.contest-grid { grid-template-columns:1.05fr 1fr; margin-top:2.25rem; }
+.contest-grid figure img { aspect-ratio:4/3; }
+.contest-copy dt { color:#e8dfff; }
+.contest-copy dd { color:var(--muted); margin:0 0 .85rem; }
+.contest-copy details { border-block:1px solid var(--line); padding:.8rem 0; }
+summary { color:var(--accent); }
+.schedule { margin-top:4rem; }
+.days { gap:.2rem; background:#211d29; padding:4px; border-radius:4px; }
+.days button { padding:.55rem .88rem; border-radius:2px; }
+.days button[aria-pressed=true] { background:var(--accent); color:#181120; }
+.schedule .caption { margin:1rem 0; }
+.show { display:grid; grid-template-columns:minmax(130px,23%) 1fr; gap:1.2rem; align-items:baseline; border-top:1px solid var(--line); padding:1rem 0; }
+.show time { color:var(--accent); }
+.show strong { font-size:clamp(1rem,1.5vw,1.36rem); font-weight:400; }
+.education { background:#dcd6eb; color:#211e29; }
+.education .lead,.education .caption,.school-grid p { color:#4f4b59; }
+.school-grid { grid-template-columns:repeat(3,1fr); }
+.school-grid article { border-top:1px solid #77717f; padding-top:1.25rem; }
+.class-sign { display:block; width:70px; height:54px; margin-bottom:1.5rem; }
+.lens { background:repeating-radial-gradient(ellipse at 55% 105%,#30263c 0 1px,transparent 2px 6px); }
+.grille { background:repeating-linear-gradient(68deg,#30263c 0 2px,transparent 2px 7px); }
+.rings { background:repeating-radial-gradient(ellipse at 0 50%,#30263c 0 1px,transparent 2px 6px); }
+footer { padding:1.5rem 0; }
+footer span { font-size:.9rem; color:var(--muted); }
+@media(max-width:780px) {
+  .top nav { gap:1rem; }
+  .atlas,.contest-grid,.school-grid { grid-template-columns:1fr; }
+  .route-card { min-height:210px; scroll-margin-bottom:16px; }
+  .schedule-head { align-items:flex-start; flex-direction:column; }
+  .school-grid article { display:grid; grid-template-columns:60px 1fr; gap:0 1.1rem; }
+  .class-sign { width:56px; grid-row:span 2; }
+  .route-list { display:flex; flex-wrap:wrap; }
+  .route-list button { min-height:44px; padding:.55rem .65rem; }
+}
+@media(max-width:580px) {
+  .top { align-items:flex-start; flex-direction:column; gap:.5rem; padding:.6rem 0; }
+  .festival-logo { height:33px; }
+  .top nav { width:100%; font-size:.95rem; }
+  .hero-inner { padding-top:1.7rem; padding-bottom:1.4rem; }
+  .hero-art { height:64vw; top:4.1rem; }
+  .hero-art img { object-position:85% center; }
+  .hero-art:after { background:linear-gradient(90deg,#07070af4,transparent 52%),linear-gradient(0deg,#07070a,transparent 19%,transparent 87%,#07070a); }
+  .hero h1 { font-size:clamp(3.4rem,13vw,4.6rem); margin-top:1.05em; margin-bottom:clamp(2.9rem,12vw,5rem); }
+  h2 { font-size:clamp(2rem,8.6vw,3rem); }
+  .water-pair { grid-template-columns:1fr; }
+  .water-pair figure:nth-child(2) { margin-top:.6rem; }
+  #city-map { height:330px; }
+  .route-card { min-height:233px; }
+  .show { grid-template-columns:99px 1fr; gap:.4rem; }
+  .show time { font-size:.9rem; }
+  .place-label { font-size:.76rem; }
+  footer { flex-wrap:wrap; align-items:flex-start; }
+  footer span { width:100%; order:3; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
